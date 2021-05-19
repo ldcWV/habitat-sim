@@ -48,6 +48,7 @@ set -e
 python setup.py develop --all
 pip install . #Reinstall to trigger sys.path update
 cd /content/habitat-sim/
+git checkout origin/data-download-util
 
 #Download Assets
 python habitat_sim/utils/datasets_download.py --uids ci_test_assets --replace --data-path data/
