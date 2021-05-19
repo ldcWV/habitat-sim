@@ -36,7 +36,7 @@ conda install -S -y --prefix /usr/local -c "${CHANNEL}" -c conda-forge habitat-s
 
 #Shallow GIT clone for speed
 git clone https://github.com/facebookresearch/habitat-lab --depth 1
-git clone https://github.com/facebookresearch/habitat-sim --depth 1
+git clone https://github.com/facebookresearch/habitat-sim
 
 #Install Requirements.
 cd /content/habitat-lab/
@@ -48,6 +48,7 @@ set -e
 python setup.py develop --all
 pip install . #Reinstall to trigger sys.path update
 cd /content/habitat-sim/
+git pull
 git checkout --track origin/data-download-util
 
 #Download Assets
